@@ -3,6 +3,50 @@
 
 <head>
     <title>Fierysolid</title>
+    <style type="text/css">
+    .typed-cursor {
+        opacity: 1;
+        -webkit-animation: blink 0.7s infinite;
+        -moz-animation: blink 0.7s infinite;
+        animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @-webkit-keyframes blink {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @-moz-keyframes blink {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    </style>
 </head>
 
 <body>
@@ -22,11 +66,13 @@
             return decodeURIComponent(results[2].replace(/\+/g, " "));
         }
 
-        $(".element").typed({
-            strings: [getParameterByName('text')],
-            typeSpeed: 0
-        });
-
+        var text = getParameterByName('text');
+        if (text) {
+            $(".element").typed({
+                strings: [getParameterByName('text')],
+                typeSpeed: 0
+            });
+        }
     });
     </script>
 </body>
